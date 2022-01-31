@@ -12,13 +12,13 @@ interface ExtendedNestedSet extends NestedSetInterface
 
 
 	function childrenConditional($ConditionString);
-	function descendantsConditional($AbsoluteDepths=false,$ConditionString);
+	function descendantsConditional($ConditionString,$AbsoluteDepths=false);
 	function leavesConditional($ConditionString=null);
 	function pathConditional($ConditionString);
 
 	function depthConditional($ConditionString);
 	function parentNodeConditional($ConditionString);
-	function siblingConditional($SiblingDistance=1,$ConditionString);
+	function siblingConditional($ConditionString,$SiblingDistance=1);
 	/**/
 }
 /**
@@ -118,7 +118,7 @@ class FullNestedSet extends BaseNestedSet implements ExtendedNestedSet
      * @param string $Rest optional, rest of variables to fill in placeholders of condition string, one variable for each ? in condition
      * @return Array Node on success, null on failure
      */
-    function siblingConditional($SiblingDistance=1,$ConditionString,$Rest=null)
+    function siblingConditional($ConditionString,$SiblingDistance=1,$Rest=null)
     {
         $Arguments=func_get_args();
         $ConditionString=$ConditionString; //prevent warning
@@ -224,7 +224,7 @@ class FullNestedSet extends BaseNestedSet implements ExtendedNestedSet
 	 * @return Rowset including Depth field
 	 * @seealso children
      */
-    function descendantsConditional($AbsoluteDepths=false,$ConditionString,$Rest=null)
+    function descendantsConditional($ConditionString,$AbsoluteDepths=false,$Rest=null)
     {
         if (!$AbsoluteDepths)
             $DepthConcat="- (sub_tree.innerDepth )";
