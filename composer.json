@@ -28,7 +28,7 @@
 	},
 	"repositories" : [{
             "type" : "vcs",
-            "url" : "https://github.com/OWASP/rbac.git"
+            "url" : "https://github.com/fldei101/rbac.git"
         }
     ]
 }
