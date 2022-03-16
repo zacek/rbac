@@ -22,7 +22,7 @@ class Rbac
         }
 
         if($ProvidedHostname) $host = $ProvidedHostname;
-        if($ProvidedDbname) $dbname = $dbname;
+        if($ProvidedDbname) $dbname = $ProvidedDbname;
         if($ProvidedUsername) $user = $ProvidedUsername;
         if($ProvidedPassword) $pass = $ProvidedPassword;
         if($ProvidedAdapter) $adapter = $ProvidedAdapter;
