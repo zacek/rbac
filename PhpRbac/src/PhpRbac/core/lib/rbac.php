@@ -618,11 +618,11 @@ class RbacManager extends JModel
 	function getWildcardPermissionList($search)
 	{
 		$Res = Jf::sql(
-			"SELECT Title
+			"SELECT TPdirect.Title
             FROM
-            {$this->tablePrefix()}permissions
-			WHERE Title LIKE :permission",
-			"{$search}%"
+            {$this->tablePrefix()}permissions AS TPdirect
+			WHERE TPdirect.Title LIKE ?",
+			$search . "%"
 		);
 		return $Res;
 	}
