@@ -144,7 +144,7 @@ abstract class BaseRbac extends JModel
 	 */
 	public function returnId($entity = null)
 	{
-	    if (substr ($entity, 0, 1) == "/") {
+	    if (substr ($entity ?? '', 0, 1) == "/") {
 	        $entityID = $this->pathId($entity);
 	    } else {
 	        $entityID = $this->titleId($entity);
