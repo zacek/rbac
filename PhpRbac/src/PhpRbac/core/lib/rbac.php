@@ -329,7 +329,7 @@ abstract class BaseRbac extends JModel
 	 */
 	function descendants($ID)
 	{
-		$res = $this->{$this->type()}->descendantsConditional("ID=?", $ID, false);
+		$res = $this->{$this->type()}->descendantsConditional("ID=?", false, $ID);
 		$out = array();
 		if (is_array($res))
 			foreach ($res as $v)
